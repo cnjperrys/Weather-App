@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 42px;
+    left: -25px;
+}
+
+.date {
+    font-size: 22px;
+    position: relative;
+    top: -85px;
+    right: -500px;
+}
+
+.time {
+    font-size: 22px;
+    position: relative;
+    top: -65px;
+    right: -302px;
+}
+
+.cloudy {
+    font-size: 16px;
+    position: relative;
+    top: -45px;
+    right: -140px;
+}
+
+.Precipitation {
+    position: relative;
+    top: -65px;
+    left: 120px;
+}
+
+.Humidity {
+    position: relative;
+    top: -45px;
+    left: -08px;
+}
+
+.Wind {
+    position: relative;
+    top: -25px;
+    left: -110px;
+}
