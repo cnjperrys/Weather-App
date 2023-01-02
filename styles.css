@@ -1,6 +1,5 @@
 body {
     background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    border-radius: 100px;
 }
 
 .weather-app-wrapper {
@@ -20,6 +19,27 @@ border-radius: 5px;
 
 h1 {
     font-size: 24px;
+    font-weight: 100;
+    line-height: 28px;
+    margin-bottom: 0;
+    
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(135,135,135);
+    font: 16px;
+    font-weight: 100;
+    line-height: 19px;
+
 }
 
 h2 {
