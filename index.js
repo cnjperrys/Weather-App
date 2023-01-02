@@ -1,3 +1,5 @@
+let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
+let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric";
 let now = new Date();
 let date = now.getDate();
 let year = now.getFullYear();
@@ -40,6 +42,13 @@ function searchLocation(position) {
   let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function displayTemperature(response){
+let temperatureElement = document.querySelector("#temperature");
+temperatureElement.innerHTML = Math.round (response.data.main.temp);
+
+
 }
 
 function displayWeatherCondition(response) {
