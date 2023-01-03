@@ -24,8 +24,8 @@ let months = [
 let month = months[now.getMonth()];
 
 
-let currentDateElement = document.querySelector("#dateTime");
-currentDateElement.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
+let currentDate = document.querySelector(".dateTime");
+currentDate.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
 
 
 function searchCity(city) {
