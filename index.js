@@ -49,19 +49,19 @@ function searchLocation(position) {
 document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 
-document.querySelector(".temperature").innerHTML = Math.round(
+document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );  
 
-document.querySelector(".pressure").innerHTML = response.data.main.pressure;
-  document.querySelector(".humidity").innerHTML = response.data.main.humidity;
-  document.querySelector(".wind").innerHTML = Math.round(
+document.querySelector("#pressure").innerHTML = response.data.main.pressure;
+  document.querySelector(#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector(".degrees").innerHTML = Math.round(
+  document.querySelector("#degrees").innerHTML = Math.round(
     response.data.main.temp
   );
 }
