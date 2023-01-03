@@ -47,20 +47,36 @@ h2 {
     left: -25px;
 }
 
+.overview {
+    margin-bottom 20px;
+}
 
-.Precipitation {
+.weather-temperature img {
+    margin-right: 10px;
+    height: 64px;
+    width: 64px;
+}
+
+.weather-temperature strong {
+    color: rgb(33, 33, 33);
+    font-size: 64px;
+    font-weight: 400;
+    
+}
+
+.precipitation {
     position: relative;
     top: -65px;
     left: 120px;
 }
 
-.Humidity {
+.humidity {
     position: relative;
     top: -45px;
     left: -08px;
 }
 
-.Wind {
+.wind {
     position: relative;
     top: -25px;
     left: -110px;
