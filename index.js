@@ -23,8 +23,10 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-let h3 = document.querySelector("h3");
-h3.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
+
+let currentDateElement = document.querySelector("#dateTime");
+currentDateElement.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
+
 
 function searchCity(city) {
   let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
@@ -47,7 +49,8 @@ function searchLocation(position) {
 function displayTemperature(response){
 let temperatureElement = document.querySelector("#temperature");
 temperatureElement.innerHTML = Math.round (response.data.main.temp);
-
+let descriptionElement = document.querySelector("#description");
+descriptionElement.innerHTML = response.data.weather[0].description;
 
 }
 
