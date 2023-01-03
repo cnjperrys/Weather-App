@@ -22,7 +22,7 @@ h1 {
     font-weight: 100;
     line-height: 28px;
     margin-bottom: 0;
-    
+
 }
 
 ul {
@@ -47,26 +47,6 @@ h2 {
     left: -25px;
 }
 
-.date {
-    font-size: 22px;
-    position: relative;
-    top: -85px;
-    right: -500px;
-}
-
-.time {
-    font-size: 22px;
-    position: relative;
-    top: -65px;
-    right: -302px;
-}
-
-.cloudy {
-    font-size: 16px;
-    position: relative;
-    top: -45px;
-    right: -140px;
-}
 
 .Precipitation {
     position: relative;
