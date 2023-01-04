@@ -24,7 +24,7 @@ let months = [
 let month = months[now.getMonth()];
 
 
-let currentDate = document.querySelector(".dateTime");
+let currentDate = document.querySelector("#dateTime");
 currentDate.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
 
 
@@ -54,7 +54,7 @@ document.querySelector("#temperature").innerHTML = Math.round(
   );  
 
 document.querySelector("#pressure").innerHTML = response.data.main.pressure;
-  document.querySelector(#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
