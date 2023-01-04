@@ -27,6 +27,7 @@ let month = months[now.getMonth()];
 let dateTime = document.querySelector("#dateTime");
 dateTime.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
 
+axios.get(apiUrl).then(displayWeatherCondition);
 
 function searchCity(city) {
   let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
@@ -45,7 +46,7 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
- document.querySelector(".description").innerHTML =
+ document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 
  document.querySelector("#temperature").innerHTML = Math.round(
@@ -60,7 +61,7 @@ document.querySelector("#pressure").innerHTML = response.data.main.pressure;
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#degrees").innerHTML = Math.round(
+  document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
 }
