@@ -48,7 +48,7 @@ h2 {
 }
 
 .overview {
-    margin-bottom 20px;
+    margin-bottom: 20px;
 }
 
 .weather-temperature img {
@@ -61,7 +61,7 @@ h2 {
     color: rgb(33, 33, 33);
     font-size: 64px;
     font-weight: 400;
-    
+
 }
 
 .precipitation {
