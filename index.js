@@ -50,7 +50,7 @@ descriptionElement.innerHTML = response.data.weather[0].description;
 }
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
+  document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
 }

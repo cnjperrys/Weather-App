@@ -18,7 +18,7 @@ border-radius: 5px;
 
 
 h1 {
-    color: red;
+
     font-size: 24px;
     font-weight: 100;
     line-height: 28px;
@@ -58,9 +58,9 @@ h2 {
     width: 64px;
 }
 
-.temp  {
+#temp  {
     color: rgb(33, 33, 33);
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 400;
 
 }
