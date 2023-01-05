@@ -43,6 +43,7 @@ li {
 }
 
 h2 {
+    color: Red;
     font-size: 42px;
     left: -25px;
 }
@@ -57,7 +58,7 @@ h2 {
     width: 64px;
 }
 
-.weather-temperatue strong  {
+.temp  {
     color: rgb(33, 33, 33);
     font-size: 25px;
     font-weight: 400;

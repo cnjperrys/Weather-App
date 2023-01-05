@@ -25,7 +25,7 @@ let month = months[now.getMonth()];
 
 
 let dateTime = document.querySelector("#dateTime");
-("#dateTime").innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
+dateTime.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
 
 axios.get(apiUrl).then(displayWeatherCondition);
 
