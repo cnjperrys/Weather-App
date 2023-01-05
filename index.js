@@ -68,6 +68,9 @@ function displayWeatherCondition(response) {
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
+
 }
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
