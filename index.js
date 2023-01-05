@@ -43,10 +43,23 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 function displayTemperature(response){
+let cityElement = document.querySelector("#city"); 
 let tempElement = document.querySelector("#temp");
-tempElement.innerHTML = Math.round (response.data.main.temp);
-let descriptionElement = document.querySelector("#description");
-descriptionElement.innerHTML = response.data.weather[0].description;
+let weatherElement = document.querySelector("#description");
+let humidityElement = querySelector("#humidity");
+let windElement = querySelector("#wind");
+let dateElement = querySelector("#date");
+
+ celsiusTemp = response.data.temperature.current;
+ temperatureElement.innerHTML = Math.round(celsiusTemp);
+
+ tempElement.innerHTML = Math.round (response.data.main.temp);
+ cityElement.innerHTML = response.data.name;
+weatherElement.innerHTML = response.data.condition.description;
+humidityElement.innerHTML = response.data.main.humidity;
+windElement.innerHTML = Math.round(response.data.wind.speed);
+dateElement.innerHTML = formatDate(response.data.dt*1000);
+
 }
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
