@@ -65,6 +65,20 @@ h2 {
 
 }
 
+#fahrenheit-link {
+    color: rgb(33, 33, 33);
+
+}
+
+#celsius-link {
+    color: rgb(33, 33, 33);
+}
+ 
+hover {
+    cursor: pointer;
+
+}
+
 .precipitation {
     position: relative;
     top: -65px;
@@ -81,4 +95,14 @@ h2 {
     position: relative;
     top: -25px;
     left: -110px;
+}
+
+.col {
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 10px;
+    font-size: smaller;
+    margin-bottom: 0px;
 }

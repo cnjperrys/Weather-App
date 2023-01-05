@@ -1,5 +1,6 @@
 let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric";
+
 let now = new Date();
 let date = now.getDate();
 let year = now.getFullYear();
@@ -45,7 +46,7 @@ function searchCity(city) {
 function displayTemperature(response){
 let cityElement = document.querySelector("#city"); 
 let tempElement = document.querySelector("#temp");
-let weatherElement = document.querySelector("#description");
+let descriptionElement = document.querySelector("#description");
 let humidityElement = querySelector("#humidity");
 let windElement = querySelector("#wind");
 let dateElement = querySelector("#date");
@@ -53,9 +54,10 @@ let dateElement = querySelector("#date");
  celsiusTemp = response.data.temperature.current;
  temperatureElement.innerHTML = Math.round(celsiusTemp);
 
- tempElement.innerHTML = Math.round (response.data.main.temp);
- cityElement.innerHTML = response.data.name;
-weatherElement.innerHTML = response.data.condition.description;
+tempElement.innerHTML = Math.round (response.data.main.temp);
+cityElement.innerHTML = response.data.name;
+descriptionElement.innerHTML = response.data.weather[0].description;
+
 humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt*1000);
