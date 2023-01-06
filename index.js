@@ -43,33 +43,43 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
-function displayTemperature(response){
+function displayTemperature(response) {
 let cityElement = document.querySelector("#city"); 
 let tempElement = document.querySelector("#temp");
 let descriptionElement = document.querySelector("#description");
-let humidityElement = querySelector("#humidity");
-let windElement = querySelector("#wind");
-let dateElement = querySelector("#date");
+let humidityElement = document.querySelector("#humidity");
+let windElement = document.querySelector("#wind");
+let dateElement = document.querySelector("#date");
+let iconELement = document.querySelector("#icon");
 
- celsiusTemp = response.data.temperature.current;
- temperatureElement.innerHTML = Math.round(celsiusTemp);
+
 
 tempElement.innerHTML = Math.round (response.data.main.temp);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
-
+iconELement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt*1000);
 
 }
 function displayWeatherCondition(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
 
 }
+
+function displayFahrenheitTemp (event){
+  event.preventDefault ();
+  let fahrenheitTemp = (14 * 9) / 5 + 32;
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = fahrenheitTemp;
+}
+let fahrenheitlink = document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click, displayFahrenheitTemp");
 
 
 let searchForm = document.querySelector("#search-form");
