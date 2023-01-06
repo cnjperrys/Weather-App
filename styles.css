@@ -74,9 +74,9 @@ h2 {
     color: rgb(33, 33, 33);
 }
  
-hover {
-    cursor: pointer;
-
+.weather-temperature .active {
+    color:rgb(33, 33, 33)
+    cursor: default;
 }
 
 .precipitation {
@@ -104,5 +104,5 @@ hover {
 footer {
     margin-top: 10px;
     font-size: smaller;
-    margin-bottom: none;
+
 }

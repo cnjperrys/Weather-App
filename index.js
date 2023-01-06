@@ -27,15 +27,24 @@ let month = months[now.getMonth()];
 let currentDate = document.querySelector("#dateTime");
 currentDate.innerHTML = `${month} ${date}, ${year} ${day} ${hours}:${minutes}pm EST`;
 
+
 function searchCity(city) {
   let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(displayTemperature);
 }
  function searchSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-text-input").value;
   searchCity(city);
+}
+
+function formatDay(timestamp){
+  let date = new Date (timestamp);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue","Wed","Thur","Fri","Sat"];
+
+  return days[day];
 }
 
  function searchLocation(position) {
@@ -72,19 +81,17 @@ function displayWeatherCondition(response) {
 
 }
 
-function displayFahrenheitTemp (event){
+function displayFahrenheitTemp (event) {
   event.preventDefault ();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let tempElement = document.querySelector("#temp");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
+ }
 function displayCelsiusTemp (event) {
 event.preventDefault();
+let tempElement = document.querySelector("#temp");
 tempElement.innerHTML = Math.round(celsiusTemp);
-
 }
-
 let celsiusTemp = null;
 
 let fahrenheitlink = document.querySelector("#fahrenheit-link");
