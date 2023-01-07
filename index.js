@@ -112,7 +112,7 @@ if (index < 6) {
 forecastHTML = forecastHTML +
 
              `
-            <div class="col-2">
+            <div class="col-6">
                 <div class = "weather-forecast-day">${forecastDay.dt}</div>
                <div class = "weather-forecast-date">11/15</div>
                 <img class = "forecast-icon" src="${forecastDay.condition.icon_url}"
@@ -139,7 +139,8 @@ axios.get(apiUrl).then(displayForecast);
 }
 
 
-
+let locatebutton = document.querySelector("#location-button");
+locatebutton.addEventListener("click", currentLocation)
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
