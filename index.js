@@ -83,5 +83,12 @@ function displayWeatherCondition(response) {
 
 }
 
+function displayForecast(response){
+let forecastElement = document.querySelector("#forecast");
+
+forecastElement.innerHTML = "Forecast";
+}
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
