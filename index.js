@@ -56,6 +56,21 @@ function formatDay(timestamp){
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(findLocation);
+}
+function findLocation(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+  
+}
+
+
+
 function displayTemperature(response) {
 let cityElement = document.querySelector("#city"); 
 let tempElement = document.querySelector("#temp");
@@ -71,9 +86,18 @@ descriptionElement.innerHTML = response.data.weather[0].description;
 iconELement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
-dateElement.innerHTML = formatDate(response.data.dt*1000);
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+
+getForecast(response.data.coord);
+
 
 }
+
+
+
+
+
 function displayWeatherCondition(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -83,7 +107,8 @@ function displayWeatherCondition(response) {
 
 }
 
-function displayForecast(){
+function displayForecast(response){
+  console.log(response.data);
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
@@ -92,7 +117,7 @@ days.forEach(function(day) {
 
 forecastHTML = forecastHTML +
              `
-            <div class="col-2">
+            <div class="col-6">
                 <div class = "weather-forecast-day">${day}<br /></div>
                <div class = "weather-forecast-date">11/15 <br /></div>
                 <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/061/097/original/mostly_cloudy.png?1672637475g"
@@ -109,6 +134,16 @@ forecastHTML = forecastHTML +
  forecastHtML = forecastHTML + `</div>`;
  forecastElement.innerHTML=forecastHTML;
 }
+
+function getForecast(coordinates){
+console.log(coordinates);
+let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
+let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apikey}&units=imperial`;
+axios.get(apiUrl).then(displayForecast);
+}
+
+
+
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
