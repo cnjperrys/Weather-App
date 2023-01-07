@@ -69,8 +69,6 @@ function findLocation(position) {
   
 }
 
-
-
 function displayTemperature(response) {
 let cityElement = document.querySelector("#city"); 
 let tempElement = document.querySelector("#temp");
@@ -94,10 +92,6 @@ getForecast(response.data.coord);
 
 }
 
-
-
-
-
 function displayWeatherCondition(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -108,28 +102,30 @@ function displayWeatherCondition(response) {
 }
 
 function displayForecast(response){
-  console.log(response.data);
+  let forecast = response.data.daily;
+
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-let days = ["Thu","Fri","Sat"];
-days.forEach(function(day) {
-
+forecast.forEach(function(forecastDay,index) {
+if (index < 6) {
 forecastHTML = forecastHTML +
+
              `
-            <div class="col-6">
-                <div class = "weather-forecast-day">${day}<br /></div>
-               <div class = "weather-forecast-date">11/15 <br /></div>
-                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/061/097/original/mostly_cloudy.png?1672637475g"
-                 alt=""
-                width="60"
+            <div class="col-2">
+                <div class = "weather-forecast-day">${forecastDay.dt}</div>
+               <div class = "weather-forecast-date">11/15</div>
+                <img class = "forecast-icon" src="${forecastDay.condition.icon_url}"
+                 alt="${forecastDay.icon}"
+                width="40px"
                  />
                 <div class = "weather-forecast-temp">
-                    <span class ="weather-forecast-max">18°</span> 
-                    <span class="weather-forecast-min">12°</span>
+                    <span class ="weather-forecast-max">${forecastDay.temp.max}°</span> 
+                    <span class="weather-forecast-min">${forecastDay.temp.min}°</span>
                     </div>
             </div>
 `;
+}
 });
  forecastHtML = forecastHTML + `</div>`;
  forecastElement.innerHTML=forecastHTML;
