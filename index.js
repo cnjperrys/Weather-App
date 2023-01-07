@@ -83,12 +83,32 @@ function displayWeatherCondition(response) {
 
 }
 
-function displayForecast(response){
+function displayForecast(){
 let forecastElement = document.querySelector("#forecast");
 
-forecastElement.innerHTML = "Forecast";
-}
+let forecastHTML = `<div class="row">`;
+let days = ["Thu","Fri","Sat"];
+days.forEach(function(day) {
 
+forecastHTML = forecastHTML +
+             `
+            <div class="col-2">
+                <div class = "weather-forecast-day">${day}<br /></div>
+               <div class = "weather-forecast-date">11/15 <br /></div>
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/061/097/original/mostly_cloudy.png?1672637475g"
+                 alt=""
+                width="60"
+                 />
+                <div class = "weather-forecast-temp">
+                    <span class ="weather-forecast-max">18°</span> 
+                    <span class="weather-forecast-min">12°</span>
+                    </div>
+            </div>
+`;
+});
+ forecastHtML = forecastHTML + `</div>`;
+ forecastElement.innerHTML=forecastHTML;
+}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchSubmit);
