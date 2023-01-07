@@ -65,27 +65,7 @@ h2 {
 
 }
 
-#fahrenheit-link {
-    color: rgb(33, 33, 33);
-
-}
-
-#celsius-link {
-    color: rgb(33, 33, 33);
-}
- 
-.weather-temperature .active {
-    color:rgb(33, 33, 33)
-    cursor: default;
-}
-
-.precipitation {
-    position: relative;
-    top: -65px;
-    left: 120px;
-}
-
-.humidity {
+ .humidity {
     position: relative;
     top: -45px;
     left: -08px;
@@ -99,6 +79,10 @@ h2 {
 
 .col {
     margin-top: 10px;
+}
+
+.weather-forecast {
+
 }
 
 footer {
