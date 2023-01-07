@@ -17,8 +17,12 @@ border-radius: 5px;
 }
 
 #location-button {
-font-size: 10px;
+font-size: 11px;
 
+}
+
+#locationa-button :hover {
+cursor: pointer;
 
 }
 

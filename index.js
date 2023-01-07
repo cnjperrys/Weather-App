@@ -101,23 +101,22 @@ function displayWeatherCondition(response) {
 
 }
 
-function displayForecast(response){
+function displayForecast(response) {
   let forecast = response.data.daily;
-
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-forecast.forEach(function(forecastDay,index) {
+forecast.forEach(function(forecastDay, index) {
 if (index < 6) {
 forecastHTML = forecastHTML +
 
              `
-            <div class="col-6">
+            <div class="col-6"${day}>
                 <div class = "weather-forecast-day">${forecastDay.dt}</div>
                <div class = "weather-forecast-date">11/15</div>
-                <img class = "forecast-icon" src="${forecastDay.condition.icon_url}"
+                <img class = "forecast-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                  alt="${forecastDay.icon}"
-                width="40px"
+                width="60px"
                  />
                 <div class = "weather-forecast-temp">
                     <span class ="weather-forecast-max">${forecastDay.temp.max}°</span> 
@@ -127,7 +126,7 @@ forecastHTML = forecastHTML +
 `;
 }
 });
- forecastHtML = forecastHTML + `</div>`;
+ forecastHTML = forecastHTML + `</div>`;
  forecastElement.innerHTML=forecastHTML;
 }
 
