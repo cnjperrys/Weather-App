@@ -21,6 +21,10 @@ font-size: 11px;
 
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 #locationa-button :hover {
 cursor: pointer;
 
