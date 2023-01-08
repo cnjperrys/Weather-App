@@ -43,8 +43,9 @@ function searchCity(city) {
   searchCity(city);
 }
 
-function formatDay(timestamp){
-  let date = new Date (timestamp);
+function formatDay(timestamp) {
+  console.log (response.data);
+  let date = new Date (timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue","Wed","Thur","Fri","Sat"];
 
@@ -107,11 +108,11 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
-            <div class="col-6">
+            <div class="col-2">
                 <div class = "weather-forecast-day">${forecastDay.dt}</div>
                <div class = "weather-forecast-date">11/15</div>
                 <img class = "forecast-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
