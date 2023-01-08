@@ -9,7 +9,7 @@ margin: 30px auto;
  
 .weather-app {
 max-width: 600px;
-margin: 30px auto;
+margin: 30 auto;
 padding: 20px;
 border: 1px solid #dadde1;
 border-radius: 5px;
@@ -98,6 +98,13 @@ h2 {
 .weather-forecast {
     display: block;
     margin:  0 auto;
+
+    #forecast {
+display: block;
+margin: 0 auto;
+
+
+    }
 
 }
 

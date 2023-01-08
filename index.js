@@ -43,7 +43,7 @@ function searchCity(city) {
   searchCity(city);
 }
 
-function forecastDay(timestamp) {
+function formatDay(timestamp) {
   let date = new Date (timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue","Wed","Thur","Fri","Sat"];
@@ -112,7 +112,7 @@ function displayForecast(response) {
         forecastHTML +
         `
             <div class="col-2">
-                <div class = "weather-forecast-day">${forecastDay.dt}</div>
+                <div class = "weather-forecast-day">${formatDay(forecastDay.dt)}</div>
                <div class = "weather-forecast-date">11/15</div>
                 <img class = "forecast-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                  alt="${forecastDay.icon}"
