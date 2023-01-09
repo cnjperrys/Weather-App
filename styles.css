@@ -96,17 +96,19 @@ h2 {
 }
 
 .weather-forecast {
-    display: block;
-    margin:  0 auto;
-
-    #forecast {
-display: block;
-margin: 0 auto;
-
-
+   margin-top: 20px;
+   text-align: center;
     }
 
-}
+ .weather-forecast-max {
+    color: black
+
+ }
+
+ .weather-forecast-min {
+    color: black;
+    opacity: .5;
+ }
 
 footer {
     margin-top: 10px;

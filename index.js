@@ -39,8 +39,8 @@ function searchCity(city) {
 }
  function searchSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#search-text-input").value;
-  searchCity(city);
+  let city = document.querySelector("#search-text-input");
+  searchCity(currentLocation.value);
 }
 
 function formatDay(timestamp) {
@@ -50,6 +50,7 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
 
  function searchLocation(position) {
   let apiKey = "3eb4b0dca3267978aa192a5a0660c7d2";
@@ -107,13 +108,12 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
             <div class="col-2">
                 <div class = "weather-forecast-day">${formatDay(forecastDay.dt)}</div>
-               <div class = "weather-forecast-date">11/15</div>
                 <img class = "forecast-icon" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                  alt="${forecastDay.icon}"
                 width="60px"
