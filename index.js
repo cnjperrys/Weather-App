@@ -141,6 +141,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+searchCity("Rhode Island")
 
 
 let locatebutton = document.querySelector("#location-button");
